@@ -1,20 +1,34 @@
 
 idade = int(input('Digite sua idade: '))
-
+#aqui a variavel foi criada e foi especificada que o usuario vai dar o valor a ela.
 if idade < 18 or idade >= 65:
     print('Sua idade não permite a realização do empréstimo')
+#uma condicao e iniciada, SE a idade digitada for menor ou maior ou igual que 65, o emprestimo nao sera feito.
 else:
+#caso a condicao esteja no criterio da condicao, a etapa do emprestimo continuara.
     renda = int(input('Digite sua renda: '))
     valor_emprestimo = int(input('Digite o valor para o empréstimo: '))
     quantidade_parcelas = int(input('Digite a quantidade de parcelas: '))
+    #as variaveis renda, valor_emprestimo e quantidade_parcelas, assim como idade, serao definidas pelo usuario.
+  
 
     montante = valor_emprestimo * (1 + 0.015) ** quantidade_parcelas
+    '''
+     aqui a equacao se inicia, montante e igual a variavel valor_emprestimo multiplicado*
+     por 1 + 0,015 potencializado** pela quantidade de parcelas
+    '''
 
     valor_parcela = montante / quantidade_parcelas
+    #o valor_parcela e o resultado da operacao montante dividido/ pela quantidade_parcelas
 
     if valor_parcela > renda / 3:
+    #mais uma condicao se inicia, se o valor da parcela for maior que a renda dividido por 3
         print('O valor da parcela não pode ser maior que 1/3 da sua renda')
-    else:
+        #aparecera esta mensagem.
+    else: #caso contrario, sera feito mais um processo do emprestimo.
         print('O empréstimo no valor de ' + str(valor_emprestimo) + ' foi aprovado')
+        #aqui aparece a mensagem que o valor_emprestimo foi aprovado.
         print('O valor da parcela será ' + str(valor_parcela))
+        #aqui aparece a mensagem sobre o valor_parcela.
         print('O valor total dos pagamentos é ' + str(montante))
+        #aqui aparece a mensagem a string sobre o valor MAIS a variavel montange str(montange).
